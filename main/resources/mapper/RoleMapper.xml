@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sn.dao.RoleDao">
+
+    <resultMap type="com.sn.entity.Role" id="RoleMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="rolename" column="roleName" jdbcType="VARCHAR"/>
+        <result property="privilegeids" column="privilegeIds" jdbcType="VARCHAR"/>
+        <result property="roledescribe" column="roleDescribe" jdbcType="VARCHAR"/>
+        <result property="isInvoked" column="is_invoked" jdbcType="INTEGER"/>
+        <result property="otherprivilegeids" column="otherPrivilegeIds" jdbcType="VARCHAR"/>
+        <result property="inoutstate" column="inOutState" jdbcType="INTEGER"/>
+        <result property="softdeleteflag" column="softDeleteFlag" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into role(roleName, privilegeIds, roleDescribe, is_invoked, otherPrivilegeIds, inOutState,
+        softDeleteFlag)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.rolename}, #{entity.privilegeids}, #{entity.roledescribe}, #{entity.isInvoked},
+            #{entity.otherprivilegeids}, #{entity.inoutstate}, #{entity.softdeleteflag})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into role(roleName, privilegeIds, roleDescribe, is_invoked, otherPrivilegeIds, inOutState,
+        softDeleteFlag)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.rolename}, #{entity.privilegeids}, #{entity.roledescribe}, #{entity.isInvoked},
+            #{entity.otherprivilegeids}, #{entity.inoutstate}, #{entity.softdeleteflag})
+        </foreach>
+        on duplicate key update
+        roleName = values(roleName) , privilegeIds = values(privilegeIds) , roleDescribe = values(roleDescribe) ,
+        is_invoked = values(is_invoked) , otherPrivilegeIds = values(otherPrivilegeIds) , inOutState =
+        values(inOutState) , softDeleteFlag = values(softDeleteFlag)
+    </insert>
+
+</mapper>
+

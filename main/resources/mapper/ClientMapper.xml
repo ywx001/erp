@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sn.dao.ClientDao">
+
+<select id="findAllClient" resultType="com.sn.entity.Client">
+    select
+    client.id as id,provinceId,name,remember_code as
+    rememberCode,nickname,follow_man as followMan,
+    industry_type as
+    industryType,labelling,transformation,direction,billing,bill_content
+    as billContent,
+    homeoffice.homeOffice as homeOffice,pay_time as
+    payTime,send_method as sendMethod,
+    customer_intro_fileId as
+    customerIntroFileId,process_agree_fileId as
+    processAgreeFileId,
+    invoice_mes_fileId as invoiceMesFileId,license_fileId as
+    licenseFileId,
+    tax_payer_fileId as taxPayerFileId,other_mes_fileId as
+    otherMesFileId,
+    is_force_send as isForceSend,isMixed,pay_method as
+    payMethod,
+    return_grade as returnGrade,bank,tax_number as
+    taxNumber,tax_rate as taxRate,
+    open_account openAccount,tax_type as
+    taxType,acc_check_day as
+    accCheckDay,
+    invoice_head as
+    invoiceHead,client.phone ,client.fax,invoice_address as
+    invoiceAddress,
+    industry_address as
+    industryAddress,cityId,client.code,manage_items as
+    manageItems,
+    register_money
+    as registerMoney,emp_count as empCount,evaluate,clientNote,
+    can_use as
+    canUse,stop_use_reason as stopUseReason,QQ,wechat as weChat,
+    machine_call_police as machineCallPolice,prepay_day as
+    prepayDay,is_freeze as isFreeze,client.grade as grade,isBilling,
+    client_time as
+    clientTime,orderType,crossCheckMoney,orderOutModelId,orderInModelId,
+    inWriteId,outWriteId,priceDecimalReservation,inComingPrintModelId,balance,industryClass,
+    mainLinkMan,moneyCheckPrintModelId,moneyCheckType,inComingPrintModelIdTwo,orderOutModelIdTwo,
+    orderInRuModelId,orderOutRuModelId,isHalfPrice,productModelId,orderInIdentificationId,startPlayModelId,
+    dieAccountPrintModelId,moneyRuModelId,productModelId,businessMan,clientIsSeeMoney,taxAvoidance
+    ,orderinrumodel.modelName as orderInRuModelName
+    ,orderoutrumodel.modelName as orderOutRuModelName,m.orderInTime,client.qualifiedLabelModelId
+    ,pr.lastProcessingTime as lastProcessingTime,qlm.modelName as qualifiedLabelModel
+    from
+    client left join homeoffice on client.home_office = homeoffice.id
+    
+    left
+    join orderinrumodel on client.orderInRuModelId = orderinrumodel.id
+    left join orderoutrumodel on client.orderOutRuModelId =
+    orderoutrumodel.id
+    left join (select min(order_in_time) as
+    orderInTime,code as code1 from
+    order_in group by code) m
+    on m.code1 =
+    client.code
+    left join qualifiedlabel_model qlm
+    on qlm.id = client.qualifiedLabelModelId
+    
+
+    left join (select code,CAST(max(operateTime) AS DATE) lastProcessingTime from process_record GROUP BY code) pr
+    on client.code = pr.code
+    order by client.id desc
+    </select>
+</mapper>

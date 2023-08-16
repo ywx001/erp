@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sn.dao.UserDao">
+
+    <resultMap type="com.sn.entity.User" id="UserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="account" column="account" jdbcType="VARCHAR"/>
+        <result property="logining" column="logining" jdbcType="INTEGER"/>
+        <result property="roleids" column="roleIds" jdbcType="VARCHAR"/>
+        <result property="jobNumber" column="job_number" jdbcType="VARCHAR"/>
+        <result property="telPhone" column="tel_phone" jdbcType="VARCHAR"/>
+        <result property="bankCard" column="bank_card" jdbcType="VARCHAR"/>
+        <result property="departmentid" column="departmentId" jdbcType="INTEGER"/>
+        <result property="onegroup" column="onegroup" jdbcType="VARCHAR"/>
+        <result property="job" column="job" jdbcType="VARCHAR"/>
+        <result property="duty" column="duty" jdbcType="VARCHAR"/>
+        <result property="leaveTime" column="leave_time" jdbcType="VARCHAR"/>
+        <result property="entryTime" column="entry_time" jdbcType="VARCHAR"/>
+        <result property="isInvoked" column="is_invoked" jdbcType="INTEGER"/>
+        <result property="isFreese" column="is_freese" jdbcType="INTEGER"/>
+        <result property="workType" column="work_type" jdbcType="VARCHAR"/>
+        <result property="recordid" column="recordId" jdbcType="INTEGER"/>
+        <result property="technicalGrade" column="technical_grade" jdbcType="VARCHAR"/>
+        <result property="contractTime" column="contract_time" jdbcType="VARCHAR"/>
+        <result property="contractBegin" column="contract_begin" jdbcType="VARCHAR"/>
+        <result property="contractEnd" column="contract_end" jdbcType="VARCHAR"/>
+        <result property="note" column="note" jdbcType="VARCHAR"/>
+        <result property="wageLevel" column="wage_level" jdbcType="VARCHAR"/>
+        <result property="privilegeids" column="privilegeIds" jdbcType="VARCHAR"/>
+        <result property="instate" column="inState" jdbcType="INTEGER"/>
+        <result property="pictureRealname" column="picture_realname" jdbcType="VARCHAR"/>
+        <result property="fileId" column="file_id" jdbcType="INTEGER"/>
+        <result property="pictureUrl" column="picture_url" jdbcType="VARCHAR"/>
+        <result property="productids" column="productIds" jdbcType="VARCHAR"/>
+        <result property="modelSetRecordId" column="model_set_record_id" jdbcType="INTEGER"/>
+        <result property="professionQuality" column="profession_quality" jdbcType="VARCHAR"/>
+        <result property="annualLeave" column="annual_leave" jdbcType="INTEGER"/>
+        <result property="householdtypeid" column="householdTypeId" jdbcType="INTEGER"/>
+        <result property="emergencycontact" column="emergencyContact" jdbcType="VARCHAR"/>
+        <result property="emergencycontactphone" column="emergencyContactPhone" jdbcType="VARCHAR"/>
+        <result property="clothingsize" column="clothingSize" jdbcType="VARCHAR"/>
+        <result property="shoesize" column="shoeSize" jdbcType="NUMERIC"/>
+        <result property="cardno" column="cardNo" jdbcType="VARCHAR"/>
+        <result property="jobTitle" column="job_title" jdbcType="VARCHAR"/>
+        <result property="showColumnBillingId" column="show_column_billing_id" jdbcType="INTEGER"/>
+        <result property="showColumnStockId" column="show_column_stock_id" jdbcType="INTEGER"/>
+        <result property="showColumnUserId" column="show_column_user_id" jdbcType="INTEGER"/>
+        <result property="showColumnBackBillId" column="show_column_back_bill_id" jdbcType="INTEGER"/>
+        <result property="showColumnStatByClientId" column="show_column_stat_by_client_id" jdbcType="INTEGER"/>
+        <result property="showColumnCompensationId" column="show_column_compensation_id" jdbcType="INTEGER"/>
+        <result property="showColumnStatByDateId" column="show_column_stat_by_date_id" jdbcType="INTEGER"/>
+        <result property="showColumnSumOfMarginReasonId" column="show_column_sum_of_margin_reason_id"
+                jdbcType="INTEGER"/>
+        <result property="showColumnMoneyCheckId" column="show_column_money_check_id" jdbcType="INTEGER"/>
+        <result property="showColumnReturnMoneyId" column="show_column_return_money_id" jdbcType="INTEGER"/>
+        <result property="showColumnSumOfDeliveryDelayId" column="show_column_sum_of_delivery_delay_id"
+                jdbcType="INTEGER"/>
+        <result property="showColumnProductionSchedulingId" column="show_column_production_scheduling_id"
+                jdbcType="INTEGER"/>
+        <result property="showColumnCraftModelCompileId" column="show_column_craft_model_compile_id"
+                jdbcType="INTEGER"/>
+        <result property="showColumnCraftId" column="show_column_craft_id" jdbcType="INTEGER"/>
+        <result property="showColumnCraftModelId" column="show_column_craft_model_id" jdbcType="INTEGER"/>
+        <result property="showBillingId" column="show_billing_id" jdbcType="INTEGER"/>
+        <result property="showColumnIqcId" column="show_column_IQC_id" jdbcType="INTEGER"/>
+        <result property="showCulumnProcessRecordByStoveId" column="show_culumn_process_record_by_stove_id"
+                jdbcType="INTEGER"/>
+        <result property="showColumnAlreadyInProduceId" column="show_column_already_in_produce_id" jdbcType="INTEGER"/>
+        <result property="showcolumnprocesssummarysheetid" column="showColumnProcessSummarySheetId" jdbcType="INTEGER"/>
+        <result property="showColumnProductId" column="show_column_product_id" jdbcType="INTEGER"/>
+        <result property="showColumnClientId" column="show_column_client_id" jdbcType="INTEGER"/>
+        <result property="showprintmoneycheckid" column="showPrintMoneyCheckId" jdbcType="INTEGER"/>
+        <result property="showaddmoneycheckid" column="showAddMoneyCheckId" jdbcType="INTEGER"/>
+        <result property="showcolumnbuymaterialmessageid" column="showColumnBuyMaterialMessageId" jdbcType="INTEGER"/>
+        <result property="showcolumninspectionrecordid" column="showColumnInspectionRecordId" jdbcType="INTEGER"/>
+        <result property="showcolumnsupplierid" column="showColumnSupplierId" jdbcType="INTEGER"/>
+        <result property="showcolumnsubscribeapproveid" column="showColumnSubscribeApproveId" jdbcType="INTEGER"/>
+        <result property="showcolumnorderinid" column="showColumnOrderInId" jdbcType="INTEGER"/>
+        <result property="showCulumnProcess" column="show_culumn_process" jdbcType="VARCHAR"/>
+        <result property="showcolumnorderoutid" column="showColumnOrderOutId" jdbcType="INTEGER"/>
+        <result property="showCulumnProcessRecordId" column="show_culumn_process_record_id" jdbcType="INTEGER"/>
+        <result property="isSetPrivilege" column="is_set_privilege" jdbcType="INTEGER"/>
+        <result property="soProductids" column="so_productIds" jdbcType="VARCHAR"/>
+        <result property="soClientids" column="so_clientIds" jdbcType="VARCHAR"/>
+        <result property="soUesrids" column="so_uesrIds" jdbcType="VARCHAR"/>
+        <result property="soBackBillIds" column="so_back_bill_ids" jdbcType="VARCHAR"/>
+        <result property="soMoneyCheckIds" column="so_money_check_ids" jdbcType="VARCHAR"/>
+        <result property="soBillingIds" column="so_billing_ids" jdbcType="VARCHAR"/>
+        <result property="soResultMoneyIds" column="so_result_money_ids" jdbcType="VARCHAR"/>
+        <result property="soStockIds" column="so_stock_ids" jdbcType="VARCHAR"/>
+        <result property="soStatByClientIds" column="so_stat_by_client_ids" jdbcType="VARCHAR"/>
+        <result property="soStatByDateIds" column="so_stat_by_date_ids" jdbcType="VARCHAR"/>
+        <result property="soStatByCliBillBackIds" column="so_stat_by_cli_bill_back_ids" jdbcType="VARCHAR"/>
+        <result property="soOrderOutByCodeIds" column="so_order_out_by_code_ids" jdbcType="VARCHAR"/>
+        <result property="soOrderOutByComIds" column="so_order_out_by_com_ids" jdbcType="VARCHAR"/>
+        <result property="soCraftModelCompileIds" column="so_craft_model_compile_ids" jdbcType="VARCHAR"/>
+        <result property="soIqcIds" column="so_IQC_ids" jdbcType="VARCHAR"/>
+        <result property="soCraftModelIds" column="so_craft_model_ids" jdbcType="VARCHAR"/>
+        <result property="soCraftIds" column="so_craft_ids" jdbcType="VARCHAR"/>
+        <result property="soProductionSchedulingIds" column="so_production_scheduling_ids" jdbcType="VARCHAR"/>
+        <result property="soAlreadyInProduceIds" column="so_already_in_produce_ids" jdbcType="VARCHAR"/>
+        <result property="soProcessRecordIds" column="so_process_record_ids" jdbcType="VARCHAR"/>
+        <result property="soprocessrecordbystovebatchids" column="soProcessRecordByStoveBatchIds" jdbcType="VARCHAR"/>
+        <result property="soprocesssummarysheetids" column="soProcessSummarySheetIds" jdbcType="VARCHAR"/>
+        <result property="soinspectionrecordids" column="soInspectionRecordIds" jdbcType="VARCHAR"/>
+        <result property="sosupplierids" column="soSupplierIds" jdbcType="VARCHAR"/>
+        <result property="sosubscribeapproveids" column="soSubscribeApproveIds" jdbcType="VARCHAR"/>
+        <result property="soorderinids" column="soOrderInIds" jdbcType="VARCHAR"/>
+        <result property="soorderoutids" column="soOrderOutIds" jdbcType="VARCHAR"/>
+        <result property="sobuymaterialmessageids" column="soBuyMaterialMessageIds" jdbcType="VARCHAR"/>
+        <result property="querycenterids" column="queryCenterIds" jdbcType="VARCHAR"/>
+        <result property="userseal" column="userSeal" jdbcType="VARCHAR"/>
+        <result property="pagesize" column="pageSize" jdbcType="INTEGER"/>
+        <result property="soqueryorderinids" column="soQueryOrderInIds" jdbcType="VARCHAR"/>
+        <result property="soqueryorderoutids" column="soQueryOrderOutIds" jdbcType="VARCHAR"/>
+        <result property="soquerycheckaccountids" column="soQueryCheckAccountIds" jdbcType="VARCHAR"/>
+        <result property="showquerycolumnorderinid" column="showQueryColumnOrderInId" jdbcType="VARCHAR"/>
+        <result property="showquerycolumnorderoutid" column="showQueryColumnOrderOutId" jdbcType="VARCHAR"/>
+        <result property="showquerycolumncheckaccountid" column="showQueryColumnCheckAccountId" jdbcType="INTEGER"/>
+        <result property="sotestorderinids" column="soTestOrderInIds" jdbcType="VARCHAR"/>
+        <result property="showcolumntestorderinid" column="showColumnTestOrderInId" jdbcType="INTEGER"/>
+        <result property="soequipledgerids" column="soEquipLedgerIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnequipledgerid" column="showColumnEquipLedgerId" jdbcType="INTEGER"/>
+        <result property="soequiprepairids" column="soEquipRepairIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnequiprepairid" column="showColumnEquipRepairId" jdbcType="INTEGER"/>
+        <result property="sooutsourceids" column="soOutSourceIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnoutsourceid" column="showColumnOutSourceId" jdbcType="INTEGER"/>
+        <result property="sofinancereturnids" column="soFinanceReturnIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnfinancereturnid" column="showColumnFinanceReturnId" jdbcType="INTEGER"/>
+        <result property="showcolumnuserleaveid" column="showColumnUserLeaveId" jdbcType="INTEGER"/>
+        <result property="souserleaveids" column="soUserLeaveIds" jdbcType="VARCHAR"/>
+        <result property="sopleaserepairids" column="soPleaseRepairIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnpleaserepairid" column="showColumnPleaseRepairId" jdbcType="INTEGER"/>
+        <result property="sospecialequipmentids" column="soSpecialEquipmentIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnspecialequipmentid" column="showColumnSpecialEquipmentId" jdbcType="INTEGER"/>
+        <result property="sousertrainids" column="soUserTrainIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnusertrainid" column="showColumnUserTrainId" jdbcType="INTEGER"/>
+        <result property="soinsourceids" column="soInSourceIds" jdbcType="VARCHAR"/>
+        <result property="showcolumninsourceid" column="showColumnInSourceId" jdbcType="INTEGER"/>
+        <result property="contract" column="contract" jdbcType="VARCHAR"/>
+        <result property="originator" column="originator" jdbcType="VARCHAR"/>
+        <result property="origtime" column="origTime" jdbcType="VARCHAR"/>
+        <result property="checkman" column="checkMan" jdbcType="VARCHAR"/>
+        <result property="checktime" column="checkTime" jdbcType="VARCHAR"/>
+        <result property="showcolumnaccountid" column="showColumnAccountId" jdbcType="INTEGER"/>
+        <result property="soaccountids" column="soAccountIds" jdbcType="VARCHAR"/>
+        <result property="showruordercolumn" column="showRuOrderColumn" jdbcType="VARCHAR"/>
+        <result property="showoutordercolumn" column="showOutOrderColumn" jdbcType="VARCHAR"/>
+        <result property="showColumnSalaryId" column="show_column_salary_Id" jdbcType="VARCHAR"/>
+        <result property="soSalaryIds" column="so_salary_ids" jdbcType="VARCHAR"/>
+        <result property="lengthof" column="lengthOf" jdbcType="INTEGER"/>
+        <result property="insurance" column="insurance" jdbcType="VARCHAR"/>
+        <result property="showcolumndietimberid" column="showColumnDieTimberId" jdbcType="INTEGER"/>
+        <result property="showcolumndietimberpurchasingid" column="showColumnDieTimberPurchasingId" jdbcType="INTEGER"/>
+        <result property="showcolumndietimbersaleid" column="showColumnDieTimberSaleId" jdbcType="INTEGER"/>
+        <result property="sodietimbersaleids" column="soDieTimberSaleIds" jdbcType="VARCHAR"/>
+        <result property="showcolumndietimberstockid" column="showColumnDieTimberStockId" jdbcType="INTEGER"/>
+        <result property="soprostateids" column="soProStateIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnprostateid" column="showColumnProStateId" jdbcType="INTEGER"/>
+        <result property="sodietimberaccountids" column="soDieTimberAccountIds" jdbcType="VARCHAR"/>
+        <result property="showcolumndietimberaccountid" column="showColumnDieTimberAccountId" jdbcType="INTEGER"/>
+        <result property="showbillingandbackmoneycolumn" column="showBillingAndBackMoneyColumn" jdbcType="VARCHAR"/>
+        <result property="sodietimberstockids" column="soDieTimberStockIds" jdbcType="VARCHAR"/>
+        <result property="showcolumndietimberclientid" column="showColumnDieTimberClientId" jdbcType="INTEGER"/>
+        <result property="shownowpaycolumn" column="showNowPayColumn" jdbcType="VARCHAR"/>
+        <result property="stovetemperaturecount" column="stoveTemperatureCount" jdbcType="INTEGER"/>
+        <result property="showcolumnbuybill" column="showColumnBuyBill" jdbcType="INTEGER"/>
+        <result property="showcolumndietimbercontractid" column="showColumnDieTimberContractId" jdbcType="INTEGER"/>
+        <result property="pic" column="pic" jdbcType="VARCHAR"/>
+        <result property="showorderinbasicid" column="showOrderInBasicId" jdbcType="VARCHAR"/>
+        <result property="showorderoutbasicid" column="showOrderOutBasicId" jdbcType="VARCHAR"/>
+        <result property="annualvacation" column="annualVacation" jdbcType="NUMERIC"/>
+        <result property="showmaterialbalancesids" column="showMaterialBalancesIds" jdbcType="VARCHAR"/>
+        <result property="showcolumnbuyformid" column="showColumnBuyFormId" jdbcType="INTEGER"/>
+        <result property="sobuyformids" column="soBuyFormIds" jdbcType="VARCHAR"/>
+        <result property="showfinancereturnmoneyid" column="showFinanceReturnMoneyId" jdbcType="VARCHAR"/>
+        <result property="showbillsbasicid" column="showBillsBasicId" jdbcType="VARCHAR"/>
+        <result property="clientguide" column="clientGuide" jdbcType="INTEGER"/>
+        <result property="productguide" column="productGuide" jdbcType="INTEGER"/>
+        <result property="orderinguide" column="orderInGuide" jdbcType="INTEGER"/>
+        <result property="orderoutguide" column="orderOutGuide" jdbcType="INTEGER"/>
+        <result property="sowaitorderoutbasicids" column="soWaitOrderOutBasicIds" jdbcType="VARCHAR"/>
+        <result property="sobuybillids" column="soBuyBillIds" jdbcType="VARCHAR"/>
+        <result property="sowaitorderinbasicids" column="soWaitOrderInBasicIds" jdbcType="VARCHAR"/>
+        <result property="language" column="language" jdbcType="INTEGER"/>
+        <result property="fillcolumnprocess" column="fillColumnProcess" jdbcType="VARCHAR"/>
+        <result property="sounqualifiedpro" column="soUnQualifiedPro" jdbcType="VARCHAR"/>
+        <result property="showunqualifiedpro" column="showUnQualifiedPro" jdbcType="VARCHAR"/>
+        <result property="showgetmaterials" column="showGetMaterials" jdbcType="VARCHAR"/>
+        <result property="showcolumncraft" column="showColumnCraft" jdbcType="VARCHAR"/>
+        <result property="showcolumnfilesid" column="showColumnFilesId" jdbcType="INTEGER"/>
+        <result property="showcangetmaterials" column="showCanGetMaterials" jdbcType="VARCHAR"/>
+        <result property="showtrainplan" column="showTrainPlan" jdbcType="VARCHAR"/>
+        <result property="showcustomerstatistics" column="showCustomerStatistics" jdbcType="VARCHAR"/>
+        <result property="showequipmentmaintain" column="showEquipmentMaintain" jdbcType="VARCHAR"/>
+        <result property="showcustomerrework" column="showCustomerRework" jdbcType="VARCHAR"/>
+        <result property="showmaterialjournaling" column="showMaterialJournaling" jdbcType="VARCHAR"/>
+        <result property="softdeleteflag" column="softDeleteFlag" jdbcType="INTEGER"/>
+        <result property="showproductstatistics" column="showProductStatistics" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into user(username, password, account, logining, roleIds, job_number, tel_phone, bank_card,
+        departmentId, onegroup, job, duty, leave_time, entry_time, is_invoked, is_freese, work_type, recordId,
+        technical_grade, contract_time, contract_begin, contract_end, note, wage_level, privilegeIds, inState,
+        picture_realname, file_id, picture_url, productIds, model_set_record_id, profession_quality, annual_leave,
+        householdTypeId, emergencyContact, emergencyContactPhone, clothingSize, shoeSize, cardNo, job_title,
+        show_column_billing_id, show_column_stock_id, show_column_user_id, show_column_back_bill_id,
+        show_column_stat_by_client_id, show_column_compensation_id, show_column_stat_by_date_id,
+        show_column_sum_of_margin_reason_id, show_column_money_check_id, show_column_return_money_id,
+        show_column_sum_of_delivery_delay_id, show_column_production_scheduling_id, show_column_craft_model_compile_id,
+        show_column_craft_id, show_column_craft_model_id, show_billing_id, show_column_IQC_id,
+        show_culumn_process_record_by_stove_id, show_column_already_in_produce_id, showColumnProcessSummarySheetId,
+        show_column_product_id, show_column_client_id, showPrintMoneyCheckId, showAddMoneyCheckId,
+        showColumnBuyMaterialMessageId, showColumnInspectionRecordId, showColumnSupplierId,
+        showColumnSubscribeApproveId, showColumnOrderInId, show_culumn_process, showColumnOrderOutId,
+        show_culumn_process_record_id, is_set_privilege, so_productIds, so_clientIds, so_uesrIds, so_back_bill_ids,
+        so_money_check_ids, so_billing_ids, so_result_money_ids, so_stock_ids, so_stat_by_client_ids,
+        so_stat_by_date_ids, so_stat_by_cli_bill_back_ids, so_order_out_by_code_ids, so_order_out_by_com_ids,
+        so_craft_model_compile_ids, so_IQC_ids, so_craft_model_ids, so_craft_ids, so_production_scheduling_ids,
+        so_already_in_produce_ids, so_process_record_ids, soProcessRecordByStoveBatchIds, soProcessSummarySheetIds,
+        soInspectionRecordIds, soSupplierIds, soSubscribeApproveIds, soOrderInIds, soOrderOutIds,
+        soBuyMaterialMessageIds, queryCenterIds, userSeal, pageSize, soQueryOrderInIds, soQueryOrderOutIds,
+        soQueryCheckAccountIds, showQueryColumnOrderInId, showQueryColumnOrderOutId, showQueryColumnCheckAccountId,
+        soTestOrderInIds, showColumnTestOrderInId, soEquipLedgerIds, showColumnEquipLedgerId, soEquipRepairIds,
+        showColumnEquipRepairId, soOutSourceIds, showColumnOutSourceId, soFinanceReturnIds, showColumnFinanceReturnId,
+        showColumnUserLeaveId, soUserLeaveIds, soPleaseRepairIds, showColumnPleaseRepairId, soSpecialEquipmentIds,
+        showColumnSpecialEquipmentId, soUserTrainIds, showColumnUserTrainId, soInSourceIds, showColumnInSourceId,
+        contract, originator, origTime, checkMan, checkTime, showColumnAccountId, soAccountIds, showRuOrderColumn,
+        showOutOrderColumn, show_column_salary_Id, so_salary_ids, lengthOf, insurance, showColumnDieTimberId,
+        showColumnDieTimberPurchasingId, showColumnDieTimberSaleId, soDieTimberSaleIds, showColumnDieTimberStockId,
+        soProStateIds, showColumnProStateId, soDieTimberAccountIds, showColumnDieTimberAccountId,
+        showBillingAndBackMoneyColumn, soDieTimberStockIds, showColumnDieTimberClientId, showNowPayColumn,
+        stoveTemperatureCount, showColumnBuyBill, showColumnDieTimberContractId, pic, showOrderInBasicId,
+        showOrderOutBasicId, annualVacation, showMaterialBalancesIds, showColumnBuyFormId, soBuyFormIds,
+        showFinanceReturnMoneyId, showBillsBasicId, clientGuide, productGuide, orderInGuide, orderOutGuide,
+        soWaitOrderOutBasicIds, soBuyBillIds, soWaitOrderInBasicIds, language, fillColumnProcess, soUnQualifiedPro,
+        showUnQualifiedPro, showGetMaterials, showColumnCraft, showColumnFilesId, showCanGetMaterials, showTrainPlan,
+        showCustomerStatistics, showEquipmentMaintain, showCustomerRework, showMaterialJournaling, softDeleteFlag,
+        showProductStatistics)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.username}, #{entity.password}, #{entity.account}, #{entity.logining}, #{entity.roleids},
+            #{entity.jobNumber}, #{entity.telPhone}, #{entity.bankCard}, #{entity.departmentid}, #{entity.onegroup},
+            #{entity.job}, #{entity.duty}, #{entity.leaveTime}, #{entity.entryTime}, #{entity.isInvoked},
+            #{entity.isFreese}, #{entity.workType}, #{entity.recordid}, #{entity.technicalGrade},
+            #{entity.contractTime}, #{entity.contractBegin}, #{entity.contractEnd}, #{entity.note}, #{entity.wageLevel},
+            #{entity.privilegeids}, #{entity.instate}, #{entity.pictureRealname}, #{entity.fileId},
+            #{entity.pictureUrl}, #{entity.productids}, #{entity.modelSetRecordId}, #{entity.professionQuality},
+            #{entity.annualLeave}, #{entity.householdtypeid}, #{entity.emergencycontact},
+            #{entity.emergencycontactphone}, #{entity.clothingsize}, #{entity.shoesize}, #{entity.cardno},
+            #{entity.jobTitle}, #{entity.showColumnBillingId}, #{entity.showColumnStockId}, #{entity.showColumnUserId},
+            #{entity.showColumnBackBillId}, #{entity.showColumnStatByClientId}, #{entity.showColumnCompensationId},
+            #{entity.showColumnStatByDateId}, #{entity.showColumnSumOfMarginReasonId}, #{entity.showColumnMoneyCheckId},
+            #{entity.showColumnReturnMoneyId}, #{entity.showColumnSumOfDeliveryDelayId},
+            #{entity.showColumnProductionSchedulingId}, #{entity.showColumnCraftModelCompileId},
+            #{entity.showColumnCraftId}, #{entity.showColumnCraftModelId}, #{entity.showBillingId},
+            #{entity.showColumnIqcId}, #{entity.showCulumnProcessRecordByStoveId},
+            #{entity.showColumnAlreadyInProduceId}, #{entity.showcolumnprocesssummarysheetid},
+            #{entity.showColumnProductId}, #{entity.showColumnClientId}, #{entity.showprintmoneycheckid},
+            #{entity.showaddmoneycheckid}, #{entity.showcolumnbuymaterialmessageid},
+            #{entity.showcolumninspectionrecordid}, #{entity.showcolumnsupplierid},
+            #{entity.showcolumnsubscribeapproveid}, #{entity.showcolumnorderinid}, #{entity.showCulumnProcess},
+            #{entity.showcolumnorderoutid}, #{entity.showCulumnProcessRecordId}, #{entity.isSetPrivilege},
+            #{entity.soProductids}, #{entity.soClientids}, #{entity.soUesrids}, #{entity.soBackBillIds},
+            #{entity.soMoneyCheckIds}, #{entity.soBillingIds}, #{entity.soResultMoneyIds}, #{entity.soStockIds},
+            #{entity.soStatByClientIds}, #{entity.soStatByDateIds}, #{entity.soStatByCliBillBackIds},
+            #{entity.soOrderOutByCodeIds}, #{entity.soOrderOutByComIds}, #{entity.soCraftModelCompileIds},
+            #{entity.soIqcIds}, #{entity.soCraftModelIds}, #{entity.soCraftIds}, #{entity.soProductionSchedulingIds},
+            #{entity.soAlreadyInProduceIds}, #{entity.soProcessRecordIds}, #{entity.soprocessrecordbystovebatchids},
+            #{entity.soprocesssummarysheetids}, #{entity.soinspectionrecordids}, #{entity.sosupplierids},
+            #{entity.sosubscribeapproveids}, #{entity.soorderinids}, #{entity.soorderoutids},
+            #{entity.sobuymaterialmessageids}, #{entity.querycenterids}, #{entity.userseal}, #{entity.pagesize},
+            #{entity.soqueryorderinids}, #{entity.soqueryorderoutids}, #{entity.soquerycheckaccountids},
+            #{entity.showquerycolumnorderinid}, #{entity.showquerycolumnorderoutid},
+            #{entity.showquerycolumncheckaccountid}, #{entity.sotestorderinids}, #{entity.showcolumntestorderinid},
+            #{entity.soequipledgerids}, #{entity.showcolumnequipledgerid}, #{entity.soequiprepairids},
+            #{entity.showcolumnequiprepairid}, #{entity.sooutsourceids}, #{entity.showcolumnoutsourceid},
+            #{entity.sofinancereturnids}, #{entity.showcolumnfinancereturnid}, #{entity.showcolumnuserleaveid},
+            #{entity.souserleaveids}, #{entity.sopleaserepairids}, #{entity.showcolumnpleaserepairid},
+            #{entity.sospecialequipmentids}, #{entity.showcolumnspecialequipmentid}, #{entity.sousertrainids},
+            #{entity.showcolumnusertrainid}, #{entity.soinsourceids}, #{entity.showcolumninsourceid},
+            #{entity.contract}, #{entity.originator}, #{entity.origtime}, #{entity.checkman}, #{entity.checktime},
+            #{entity.showcolumnaccountid}, #{entity.soaccountids}, #{entity.showruordercolumn},
+            #{entity.showoutordercolumn}, #{entity.showColumnSalaryId}, #{entity.soSalaryIds}, #{entity.lengthof},
+            #{entity.insurance}, #{entity.showcolumndietimberid}, #{entity.showcolumndietimberpurchasingid},
+            #{entity.showcolumndietimbersaleid}, #{entity.sodietimbersaleids}, #{entity.showcolumndietimberstockid},
+            #{entity.soprostateids}, #{entity.showcolumnprostateid}, #{entity.sodietimberaccountids},
+            #{entity.showcolumndietimberaccountid}, #{entity.showbillingandbackmoneycolumn},
+            #{entity.sodietimberstockids}, #{entity.showcolumndietimberclientid}, #{entity.shownowpaycolumn},
+            #{entity.stovetemperaturecount}, #{entity.showcolumnbuybill}, #{entity.showcolumndietimbercontractid},
+            #{entity.pic}, #{entity.showorderinbasicid}, #{entity.showorderoutbasicid}, #{entity.annualvacation},
+            #{entity.showmaterialbalancesids}, #{entity.showcolumnbuyformid}, #{entity.sobuyformids},
+            #{entity.showfinancereturnmoneyid}, #{entity.showbillsbasicid}, #{entity.clientguide},
+            #{entity.productguide}, #{entity.orderinguide}, #{entity.orderoutguide}, #{entity.sowaitorderoutbasicids},
+            #{entity.sobuybillids}, #{entity.sowaitorderinbasicids}, #{entity.language}, #{entity.fillcolumnprocess},
+            #{entity.sounqualifiedpro}, #{entity.showunqualifiedpro}, #{entity.showgetmaterials},
+            #{entity.showcolumncraft}, #{entity.showcolumnfilesid}, #{entity.showcangetmaterials},
+            #{entity.showtrainplan}, #{entity.showcustomerstatistics}, #{entity.showequipmentmaintain},
+            #{entity.showcustomerrework}, #{entity.showmaterialjournaling}, #{entity.softdeleteflag},
+            #{entity.showproductstatistics})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into user(username, password, account, logining, roleIds, job_number, tel_phone, bank_card,
+        departmentId, onegroup, job, duty, leave_time, entry_time, is_invoked, is_freese, work_type, recordId,
+        technical_grade, contract_time, contract_begin, contract_end, note, wage_level, privilegeIds, inState,
+        picture_realname, file_id, picture_url, productIds, model_set_record_id, profession_quality, annual_leave,
+        householdTypeId, emergencyContact, emergencyContactPhone, clothingSize, shoeSize, cardNo, job_title,
+        show_column_billing_id, show_column_stock_id, show_column_user_id, show_column_back_bill_id,
+        show_column_stat_by_client_id, show_column_compensation_id, show_column_stat_by_date_id,
+        show_column_sum_of_margin_reason_id, show_column_money_check_id, show_column_return_money_id,
+        show_column_sum_of_delivery_delay_id, show_column_production_scheduling_id, show_column_craft_model_compile_id,
+        show_column_craft_id, show_column_craft_model_id, show_billing_id, show_column_IQC_id,
+        show_culumn_process_record_by_stove_id, show_column_already_in_produce_id, showColumnProcessSummarySheetId,
+        show_column_product_id, show_column_client_id, showPrintMoneyCheckId, showAddMoneyCheckId,
+        showColumnBuyMaterialMessageId, showColumnInspectionRecordId, showColumnSupplierId,
+        showColumnSubscribeApproveId, showColumnOrderInId, show_culumn_process, showColumnOrderOutId,
+        show_culumn_process_record_id, is_set_privilege, so_productIds, so_clientIds, so_uesrIds, so_back_bill_ids,
+        so_money_check_ids, so_billing_ids, so_result_money_ids, so_stock_ids, so_stat_by_client_ids,
+        so_stat_by_date_ids, so_stat_by_cli_bill_back_ids, so_order_out_by_code_ids, so_order_out_by_com_ids,
+        so_craft_model_compile_ids, so_IQC_ids, so_craft_model_ids, so_craft_ids, so_production_scheduling_ids,
+        so_already_in_produce_ids, so_process_record_ids, soProcessRecordByStoveBatchIds, soProcessSummarySheetIds,
+        soInspectionRecordIds, soSupplierIds, soSubscribeApproveIds, soOrderInIds, soOrderOutIds,
+        soBuyMaterialMessageIds, queryCenterIds, userSeal, pageSize, soQueryOrderInIds, soQueryOrderOutIds,
+        soQueryCheckAccountIds, showQueryColumnOrderInId, showQueryColumnOrderOutId, showQueryColumnCheckAccountId,
+        soTestOrderInIds, showColumnTestOrderInId, soEquipLedgerIds, showColumnEquipLedgerId, soEquipRepairIds,
+        showColumnEquipRepairId, soOutSourceIds, showColumnOutSourceId, soFinanceReturnIds, showColumnFinanceReturnId,
+        showColumnUserLeaveId, soUserLeaveIds, soPleaseRepairIds, showColumnPleaseRepairId, soSpecialEquipmentIds,
+        showColumnSpecialEquipmentId, soUserTrainIds, showColumnUserTrainId, soInSourceIds, showColumnInSourceId,
+        contract, originator, origTime, checkMan, checkTime, showColumnAccountId, soAccountIds, showRuOrderColumn,
+        showOutOrderColumn, show_column_salary_Id, so_salary_ids, lengthOf, insurance, showColumnDieTimberId,
+        showColumnDieTimberPurchasingId, showColumnDieTimberSaleId, soDieTimberSaleIds, showColumnDieTimberStockId,
+        soProStateIds, showColumnProStateId, soDieTimberAccountIds, showColumnDieTimberAccountId,
+        showBillingAndBackMoneyColumn, soDieTimberStockIds, showColumnDieTimberClientId, showNowPayColumn,
+        stoveTemperatureCount, showColumnBuyBill, showColumnDieTimberContractId, pic, showOrderInBasicId,
+        showOrderOutBasicId, annualVacation, showMaterialBalancesIds, showColumnBuyFormId, soBuyFormIds,
+        showFinanceReturnMoneyId, showBillsBasicId, clientGuide, productGuide, orderInGuide, orderOutGuide,
+        soWaitOrderOutBasicIds, soBuyBillIds, soWaitOrderInBasicIds, language, fillColumnProcess, soUnQualifiedPro,
+        showUnQualifiedPro, showGetMaterials, showColumnCraft, showColumnFilesId, showCanGetMaterials, showTrainPlan,
+        showCustomerStatistics, showEquipmentMaintain, showCustomerRework, showMaterialJournaling, softDeleteFlag,
+        showProductStatistics)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.username}, #{entity.password}, #{entity.account}, #{entity.logining}, #{entity.roleids},
+            #{entity.jobNumber}, #{entity.telPhone}, #{entity.bankCard}, #{entity.departmentid}, #{entity.onegroup},
+            #{entity.job}, #{entity.duty}, #{entity.leaveTime}, #{entity.entryTime}, #{entity.isInvoked},
+            #{entity.isFreese}, #{entity.workType}, #{entity.recordid}, #{entity.technicalGrade},
+            #{entity.contractTime}, #{entity.contractBegin}, #{entity.contractEnd}, #{entity.note}, #{entity.wageLevel},
+            #{entity.privilegeids}, #{entity.instate}, #{entity.pictureRealname}, #{entity.fileId},
+            #{entity.pictureUrl}, #{entity.productids}, #{entity.modelSetRecordId}, #{entity.professionQuality},
+            #{entity.annualLeave}, #{entity.householdtypeid}, #{entity.emergencycontact},
+            #{entity.emergencycontactphone}, #{entity.clothingsize}, #{entity.shoesize}, #{entity.cardno},
+            #{entity.jobTitle}, #{entity.showColumnBillingId}, #{entity.showColumnStockId}, #{entity.showColumnUserId},
+            #{entity.showColumnBackBillId}, #{entity.showColumnStatByClientId}, #{entity.showColumnCompensationId},
+            #{entity.showColumnStatByDateId}, #{entity.showColumnSumOfMarginReasonId}, #{entity.showColumnMoneyCheckId},
+            #{entity.showColumnReturnMoneyId}, #{entity.showColumnSumOfDeliveryDelayId},
+            #{entity.showColumnProductionSchedulingId}, #{entity.showColumnCraftModelCompileId},
+            #{entity.showColumnCraftId}, #{entity.showColumnCraftModelId}, #{entity.showBillingId},
+            #{entity.showColumnIqcId}, #{entity.showCulumnProcessRecordByStoveId},
+            #{entity.showColumnAlreadyInProduceId}, #{entity.showcolumnprocesssummarysheetid},
+            #{entity.showColumnProductId}, #{entity.showColumnClientId}, #{entity.showprintmoneycheckid},
+            #{entity.showaddmoneycheckid}, #{entity.showcolumnbuymaterialmessageid},
+            #{entity.showcolumninspectionrecordid}, #{entity.showcolumnsupplierid},
+            #{entity.showcolumnsubscribeapproveid}, #{entity.showcolumnorderinid}, #{entity.showCulumnProcess},
+            #{entity.showcolumnorderoutid}, #{entity.showCulumnProcessRecordId}, #{entity.isSetPrivilege},
+            #{entity.soProductids}, #{entity.soClientids}, #{entity.soUesrids}, #{entity.soBackBillIds},
+            #{entity.soMoneyCheckIds}, #{entity.soBillingIds}, #{entity.soResultMoneyIds}, #{entity.soStockIds},
+            #{entity.soStatByClientIds}, #{entity.soStatByDateIds}, #{entity.soStatByCliBillBackIds},
+            #{entity.soOrderOutByCodeIds}, #{entity.soOrderOutByComIds}, #{entity.soCraftModelCompileIds},
+            #{entity.soIqcIds}, #{entity.soCraftModelIds}, #{entity.soCraftIds}, #{entity.soProductionSchedulingIds},
+            #{entity.soAlreadyInProduceIds}, #{entity.soProcessRecordIds}, #{entity.soprocessrecordbystovebatchids},
+            #{entity.soprocesssummarysheetids}, #{entity.soinspectionrecordids}, #{entity.sosupplierids},
+            #{entity.sosubscribeapproveids}, #{entity.soorderinids}, #{entity.soorderoutids},
+            #{entity.sobuymaterialmessageids}, #{entity.querycenterids}, #{entity.userseal}, #{entity.pagesize},
+            #{entity.soqueryorderinids}, #{entity.soqueryorderoutids}, #{entity.soquerycheckaccountids},
+            #{entity.showquerycolumnorderinid}, #{entity.showquerycolumnorderoutid},
+            #{entity.showquerycolumncheckaccountid}, #{entity.sotestorderinids}, #{entity.showcolumntestorderinid},
+            #{entity.soequipledgerids}, #{entity.showcolumnequipledgerid}, #{entity.soequiprepairids},
+            #{entity.showcolumnequiprepairid}, #{entity.sooutsourceids}, #{entity.showcolumnoutsourceid},
+            #{entity.sofinancereturnids}, #{entity.showcolumnfinancereturnid}, #{entity.showcolumnuserleaveid},
+            #{entity.souserleaveids}, #{entity.sopleaserepairids}, #{entity.showcolumnpleaserepairid},
+            #{entity.sospecialequipmentids}, #{entity.showcolumnspecialequipmentid}, #{entity.sousertrainids},
+            #{entity.showcolumnusertrainid}, #{entity.soinsourceids}, #{entity.showcolumninsourceid},
+            #{entity.contract}, #{entity.originator}, #{entity.origtime}, #{entity.checkman}, #{entity.checktime},
+            #{entity.showcolumnaccountid}, #{entity.soaccountids}, #{entity.showruordercolumn},
+            #{entity.showoutordercolumn}, #{entity.showColumnSalaryId}, #{entity.soSalaryIds}, #{entity.lengthof},
+            #{entity.insurance}, #{entity.showcolumndietimberid}, #{entity.showcolumndietimberpurchasingid},
+            #{entity.showcolumndietimbersaleid}, #{entity.sodietimbersaleids}, #{entity.showcolumndietimberstockid},
+            #{entity.soprostateids}, #{entity.showcolumnprostateid}, #{entity.sodietimberaccountids},
+            #{entity.showcolumndietimberaccountid}, #{entity.showbillingandbackmoneycolumn},
+            #{entity.sodietimberstockids}, #{entity.showcolumndietimberclientid}, #{entity.shownowpaycolumn},
+            #{entity.stovetemperaturecount}, #{entity.showcolumnbuybill}, #{entity.showcolumndietimbercontractid},
+            #{entity.pic}, #{entity.showorderinbasicid}, #{entity.showorderoutbasicid}, #{entity.annualvacation},
+            #{entity.showmaterialbalancesids}, #{entity.showcolumnbuyformid}, #{entity.sobuyformids},
+            #{entity.showfinancereturnmoneyid}, #{entity.showbillsbasicid}, #{entity.clientguide},
+            #{entity.productguide}, #{entity.orderinguide}, #{entity.orderoutguide}, #{entity.sowaitorderoutbasicids},
+            #{entity.sobuybillids}, #{entity.sowaitorderinbasicids}, #{entity.language}, #{entity.fillcolumnprocess},
+            #{entity.sounqualifiedpro}, #{entity.showunqualifiedpro}, #{entity.showgetmaterials},
+            #{entity.showcolumncraft}, #{entity.showcolumnfilesid}, #{entity.showcangetmaterials},
+            #{entity.showtrainplan}, #{entity.showcustomerstatistics}, #{entity.showequipmentmaintain},
+            #{entity.showcustomerrework}, #{entity.showmaterialjournaling}, #{entity.softdeleteflag},
+            #{entity.showproductstatistics})
+        </foreach>
+        on duplicate key update
+        username = values(username) , password = values(password) , account = values(account) , logining =
+        values(logining) , roleIds = values(roleIds) , job_number = values(job_number) , tel_phone = values(tel_phone) ,
+        bank_card = values(bank_card) , departmentId = values(departmentId) , onegroup = values(onegroup) , job =
+        values(job) , duty = values(duty) , leave_time = values(leave_time) , entry_time = values(entry_time) ,
+        is_invoked = values(is_invoked) , is_freese = values(is_freese) , work_type = values(work_type) , recordId =
+        values(recordId) , technical_grade = values(technical_grade) , contract_time = values(contract_time) ,
+        contract_begin = values(contract_begin) , contract_end = values(contract_end) , note = values(note) , wage_level
+        = values(wage_level) , privilegeIds = values(privilegeIds) , inState = values(inState) , picture_realname =
+        values(picture_realname) , file_id = values(file_id) , picture_url = values(picture_url) , productIds =
+        values(productIds) , model_set_record_id = values(model_set_record_id) , profession_quality =
+        values(profession_quality) , annual_leave = values(annual_leave) , householdTypeId = values(householdTypeId) ,
+        emergencyContact = values(emergencyContact) , emergencyContactPhone = values(emergencyContactPhone) ,
+        clothingSize = values(clothingSize) , shoeSize = values(shoeSize) , cardNo = values(cardNo) , job_title =
+        values(job_title) , show_column_billing_id = values(show_column_billing_id) , show_column_stock_id =
+        values(show_column_stock_id) , show_column_user_id = values(show_column_user_id) , show_column_back_bill_id =
+        values(show_column_back_bill_id) , show_column_stat_by_client_id = values(show_column_stat_by_client_id) ,
+        show_column_compensation_id = values(show_column_compensation_id) , show_column_stat_by_date_id =
+        values(show_column_stat_by_date_id) , show_column_sum_of_margin_reason_id =
+        values(show_column_sum_of_margin_reason_id) , show_column_money_check_id = values(show_column_money_check_id) ,
+        show_column_return_money_id = values(show_column_return_money_id) , show_column_sum_of_delivery_delay_id =
+        values(show_column_sum_of_delivery_delay_id) , show_column_production_scheduling_id =
+        values(show_column_production_scheduling_id) , show_column_craft_model_compile_id =
+        values(show_column_craft_model_compile_id) , show_column_craft_id = values(show_column_craft_id) ,
+        show_column_craft_model_id = values(show_column_craft_model_id) , show_billing_id = values(show_billing_id) ,
+        show_column_IQC_id = values(show_column_IQC_id) , show_culumn_process_record_by_stove_id =
+        values(show_culumn_process_record_by_stove_id) , show_column_already_in_produce_id =
+        values(show_column_already_in_produce_id) , showColumnProcessSummarySheetId =
+        values(showColumnProcessSummarySheetId) , show_column_product_id = values(show_column_product_id) ,
+        show_column_client_id = values(show_column_client_id) , showPrintMoneyCheckId = values(showPrintMoneyCheckId) ,
+        showAddMoneyCheckId = values(showAddMoneyCheckId) , showColumnBuyMaterialMessageId =
+        values(showColumnBuyMaterialMessageId) , showColumnInspectionRecordId = values(showColumnInspectionRecordId) ,
+        showColumnSupplierId = values(showColumnSupplierId) , showColumnSubscribeApproveId =
+        values(showColumnSubscribeApproveId) , showColumnOrderInId = values(showColumnOrderInId) , show_culumn_process =
+        values(show_culumn_process) , showColumnOrderOutId = values(showColumnOrderOutId) ,
+        show_culumn_process_record_id = values(show_culumn_process_record_id) , is_set_privilege =
+        values(is_set_privilege) , so_productIds = values(so_productIds) , so_clientIds = values(so_clientIds) ,
+        so_uesrIds = values(so_uesrIds) , so_back_bill_ids = values(so_back_bill_ids) , so_money_check_ids =
+        values(so_money_check_ids) , so_billing_ids = values(so_billing_ids) , so_result_money_ids =
+        values(so_result_money_ids) , so_stock_ids = values(so_stock_ids) , so_stat_by_client_ids =
+        values(so_stat_by_client_ids) , so_stat_by_date_ids = values(so_stat_by_date_ids) , so_stat_by_cli_bill_back_ids
+        = values(so_stat_by_cli_bill_back_ids) , so_order_out_by_code_ids = values(so_order_out_by_code_ids) ,
+        so_order_out_by_com_ids = values(so_order_out_by_com_ids) , so_craft_model_compile_ids =
+        values(so_craft_model_compile_ids) , so_IQC_ids = values(so_IQC_ids) , so_craft_model_ids =
+        values(so_craft_model_ids) , so_craft_ids = values(so_craft_ids) , so_production_scheduling_ids =
+        values(so_production_scheduling_ids) , so_already_in_produce_ids = values(so_already_in_produce_ids) ,
+        so_process_record_ids = values(so_process_record_ids) , soProcessRecordByStoveBatchIds =
+        values(soProcessRecordByStoveBatchIds) , soProcessSummarySheetIds = values(soProcessSummarySheetIds) ,
+        soInspectionRecordIds = values(soInspectionRecordIds) , soSupplierIds = values(soSupplierIds) ,
+        soSubscribeApproveIds = values(soSubscribeApproveIds) , soOrderInIds = values(soOrderInIds) , soOrderOutIds =
+        values(soOrderOutIds) , soBuyMaterialMessageIds = values(soBuyMaterialMessageIds) , queryCenterIds =
+        values(queryCenterIds) , userSeal = values(userSeal) , pageSize = values(pageSize) , soQueryOrderInIds =
+        values(soQueryOrderInIds) , soQueryOrderOutIds = values(soQueryOrderOutIds) , soQueryCheckAccountIds =
+        values(soQueryCheckAccountIds) , showQueryColumnOrderInId = values(showQueryColumnOrderInId) ,
+        showQueryColumnOrderOutId = values(showQueryColumnOrderOutId) , showQueryColumnCheckAccountId =
+        values(showQueryColumnCheckAccountId) , soTestOrderInIds = values(soTestOrderInIds) , showColumnTestOrderInId =
+        values(showColumnTestOrderInId) , soEquipLedgerIds = values(soEquipLedgerIds) , showColumnEquipLedgerId =
+        values(showColumnEquipLedgerId) , soEquipRepairIds = values(soEquipRepairIds) , showColumnEquipRepairId =
+        values(showColumnEquipRepairId) , soOutSourceIds = values(soOutSourceIds) , showColumnOutSourceId =
+        values(showColumnOutSourceId) , soFinanceReturnIds = values(soFinanceReturnIds) , showColumnFinanceReturnId =
+        values(showColumnFinanceReturnId) , showColumnUserLeaveId = values(showColumnUserLeaveId) , soUserLeaveIds =
+        values(soUserLeaveIds) , soPleaseRepairIds = values(soPleaseRepairIds) , showColumnPleaseRepairId =
+        values(showColumnPleaseRepairId) , soSpecialEquipmentIds = values(soSpecialEquipmentIds) ,
+        showColumnSpecialEquipmentId = values(showColumnSpecialEquipmentId) , soUserTrainIds = values(soUserTrainIds) ,
+        showColumnUserTrainId = values(showColumnUserTrainId) , soInSourceIds = values(soInSourceIds) ,
+        showColumnInSourceId = values(showColumnInSourceId) , contract = values(contract) , originator =
+        values(originator) , origTime = values(origTime) , checkMan = values(checkMan) , checkTime = values(checkTime) ,
+        showColumnAccountId = values(showColumnAccountId) , soAccountIds = values(soAccountIds) , showRuOrderColumn =
+        values(showRuOrderColumn) , showOutOrderColumn = values(showOutOrderColumn) , show_column_salary_Id =
+        values(show_column_salary_Id) , so_salary_ids = values(so_salary_ids) , lengthOf = values(lengthOf) , insurance
+        = values(insurance) , showColumnDieTimberId = values(showColumnDieTimberId) , showColumnDieTimberPurchasingId =
+        values(showColumnDieTimberPurchasingId) , showColumnDieTimberSaleId = values(showColumnDieTimberSaleId) ,
+        soDieTimberSaleIds = values(soDieTimberSaleIds) , showColumnDieTimberStockId =
+        values(showColumnDieTimberStockId) , soProStateIds = values(soProStateIds) , showColumnProStateId =
+        values(showColumnProStateId) , soDieTimberAccountIds = values(soDieTimberAccountIds) ,
+        showColumnDieTimberAccountId = values(showColumnDieTimberAccountId) , showBillingAndBackMoneyColumn =
+        values(showBillingAndBackMoneyColumn) , soDieTimberStockIds = values(soDieTimberStockIds) ,
+        showColumnDieTimberClientId = values(showColumnDieTimberClientId) , showNowPayColumn = values(showNowPayColumn)
+        , stoveTemperatureCount = values(stoveTemperatureCount) , showColumnBuyBill = values(showColumnBuyBill) ,
+        showColumnDieTimberContractId = values(showColumnDieTimberContractId) , pic = values(pic) , showOrderInBasicId =
+        values(showOrderInBasicId) , showOrderOutBasicId = values(showOrderOutBasicId) , annualVacation =
+        values(annualVacation) , showMaterialBalancesIds = values(showMaterialBalancesIds) , showColumnBuyFormId =
+        values(showColumnBuyFormId) , soBuyFormIds = values(soBuyFormIds) , showFinanceReturnMoneyId =
+        values(showFinanceReturnMoneyId) , showBillsBasicId = values(showBillsBasicId) , clientGuide =
+        values(clientGuide) , productGuide = values(productGuide) , orderInGuide = values(orderInGuide) , orderOutGuide
+        = values(orderOutGuide) , soWaitOrderOutBasicIds = values(soWaitOrderOutBasicIds) , soBuyBillIds =
+        values(soBuyBillIds) , soWaitOrderInBasicIds = values(soWaitOrderInBasicIds) , language = values(language) ,
+        fillColumnProcess = values(fillColumnProcess) , soUnQualifiedPro = values(soUnQualifiedPro) , showUnQualifiedPro
+        = values(showUnQualifiedPro) , showGetMaterials = values(showGetMaterials) , showColumnCraft =
+        values(showColumnCraft) , showColumnFilesId = values(showColumnFilesId) , showCanGetMaterials =
+        values(showCanGetMaterials) , showTrainPlan = values(showTrainPlan) , showCustomerStatistics =
+        values(showCustomerStatistics) , showEquipmentMaintain = values(showEquipmentMaintain) , showCustomerRework =
+        values(showCustomerRework) , showMaterialJournaling = values(showMaterialJournaling) , softDeleteFlag =
+        values(softDeleteFlag) , showProductStatistics = values(showProductStatistics)
+    </insert>
+
+    <select id="getRoles" resultType="java.lang.String">
+        select r.roleName
+        from user u
+                 join
+             role r
+             on r.id in (u.roleIds)
+        where u.account = #{account}
+    </select>
+    <select id="getRolePermission" resultType="java.lang.String">
+        select DISTINCT concat(p.id,':',rbs.id)
+        from role_detail rd
+                 join role_base_select rbs
+                      on FIND_IN_SET(rbs.id, rd.selectIds)
+                 join privilege p
+                      on p.id = rd.privilegeId
+        where rd.roleId in (#{roleIds})
+
+
+    </select>
+
+</mapper>
+
